@@ -31,26 +31,31 @@ I am a data analyst completing my M.S. in Data Science at Bellevue University, w
 **TSA Complaint Hotspots** (Python)
 Analyzed about one million TSA complaint records by airport, category, and month to identify where training and resources would have the greatest impact. *Code and full write-up coming soon.*
 
+---
 
 **White House Visitor Traffic Analysis** (Python, Plotly)
 Analyzed about 303,000 visitor records with interactive visualizations to identify traffic patterns and recommend staffing for peak periods. *Code and full write-up coming soon.*
 
+---
 
 ### Predictive Modeling
 
 **Predicting Employee Attrition** (Python, scikit-learn)
 Built a logistic regression model to flag employees at higher risk of leaving and identified key drivers, including overtime and job role. *Code and full write-up coming soon.*
 
+---
 
 ### Exploratory Analysis & Data Storytelling
 
 **Does Starting Age Affect First-Semester Grades?** (Python)
 Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades. *Code and full write-up coming soon.*
 
+---
 
 **Netflix Top 10 Viewership** (Python)
 Six visualizations showing that a title's staying power in the Top 10 reveals more than its launch-week performance. *Code and full write-up coming soon.*
 
+---
 
 ### In Progress
 
