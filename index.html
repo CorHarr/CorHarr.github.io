@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,7 @@
       padding: 55px 20px;
     }
     header h1 { margin-bottom: 5px; }
+    .tagline { font-size: 1.1em; margin: 8px 0; }
     nav { margin-top: 20px; }
     nav a {
       color: white;
@@ -38,8 +38,26 @@
       border-radius: 8px;
     }
     h2 { color: #203c60; }
+    h3 {
+      color: #203c60;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
     li { margin-bottom: 12px; }
     a { color: #1257a0; }
+    .project { margin-bottom: 18px; }
+    .project-title { font-weight: bold; }
+    .tools-used { color: #555; }
+    .status {
+      display: inline-block;
+      font-size: 0.8em;
+      background: #e8eef6;
+      color: #203c60;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-left: 6px;
+    }
     footer {
       text-align: center;
       padding: 25px;
@@ -51,7 +69,8 @@
 
 <header>
   <h1>CorHarr</h1>
-  <p>Data Science | Analytics | Visualization</p>
+  <p class="tagline">Data Analyst | Data Science | Visualization</p>
+  <p>Turning large, messy public data into clear, actionable recommendations.</p>
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -63,46 +82,108 @@
   <section id="about">
     <h2>About</h2>
     <p>
-      Welcome to my data science portfolio.
-      My professional background in risk analysis
-      has shaped how I approach data, evaluate evidence,
-      and communicate findings. My data science studies
-      have expanded my skills in Python, R, statistical
-      analysis, visualization, and predictive modeling.
+      Welcome to my data science portfolio. I am completing my
+      M.S. in Data Science at Bellevue University, with a goal of
+      supporting decision-making as an analyst in the federal government.
     </p>
     <p>
-      I focus on transforming complex information into
-      clear, practical insights that support informed
-      decision-making. My work explores public safety,
-      transportation, education, entertainment,
+      My professional background in risk analysis has shaped how I
+      approach data, evaluate evidence, and communicate findings.
+      My data science studies have expanded my skills in Python, R,
+      statistical analysis, visualization, and predictive modeling.
+    </p>
+    <p>
+      I focus on transforming complex information into clear, practical
+      insights that support informed decision-making. My work explores
+      public safety, transportation, education, entertainment,
       and workforce analytics.
     </p>
+
+    <h3>What I Bring</h3>
+    <ul>
+      <li><strong>Data cleaning and preparation:</strong> standardizing codes,
+        parsing dates, fixing data types, and combining multiple sources
+        into analysis-ready data</li>
+      <li><strong>Attention to detail:</strong> careful checks so findings
+        hold up to scrutiny</li>
+      <li><strong>Creative problem solving:</strong> looking past the obvious
+        metric to find the more useful question</li>
+      <li><strong>Independent and collaborative:</strong> comfortable owning
+        a project from start to finish and contributing as part of a team</li>
+    </ul>
+
+    <h3>Tools</h3>
+    <p>SQL &middot; Python (pandas, scikit-learn, Plotly) &middot; R &middot; Excel &middot; Power BI</p>
   </section>
 
   <section id="projects">
     <h2>Selected Projects</h2>
     <p>
-      These projects demonstrate a range of analytical
-      methods, programming tools, and practical applications.
-      Project documentation and code links will be added
-      as the portfolio develops.
+      These projects demonstrate a range of analytical methods,
+      programming tools, and practical applications. Code and full
+      write-ups are being added as the portfolio develops.
     </p>
-    <ul>
-      <li>Montgomery County Crime Rate Analysis (R)</li>
-      <li>College Starting Age and Academic Performance (Python)</li>
-      <li>Netflix Top 10 Viewership Analysis (Python)</li>
-      <li>White House Visitor Traffic Analysis (Python)</li>
-      <li>TSA Complaint Hotspots (Python)</li>
-      <li>Predicting Employee Attrition (Python)</li>
-    </ul>
+
+    <h3>Public Sector &amp; Operations</h3>
+    <div class="project">
+      <span class="project-title">TSA Complaint Hotspots</span>
+      <span class="tools-used">(Python)</span>
+      <span class="status">Coming soon</span><br>
+      Analyzed about one million TSA complaint records by airport, category,
+      and month to identify where training and resources would have the
+      greatest impact.
+    </div>
+    <div class="project">
+      <span class="project-title">White House Visitor Traffic Analysis</span>
+      <span class="tools-used">(Python, Plotly)</span>
+      <span class="status">Coming soon</span><br>
+      Analyzed about 303,000 visitor records with interactive visualizations
+      to identify traffic patterns and recommend staffing for peak periods.
+    </div>
+    <div class="project">
+      <span class="project-title">Montgomery County Crime Rate Analysis</span>
+      <span class="tools-used">(R)</span>
+      <span class="status">Coming soon</span><br>
+      Combined county, state, and Census data to compare crime per capita,
+      finding the county has one of Maryland's lower crime rates when
+      population is considered.
+    </div>
+
+    <h3>Predictive Modeling</h3>
+    <div class="project">
+      <span class="project-title">Predicting Employee Attrition</span>
+      <span class="tools-used">(Python, scikit-learn)</span>
+      <span class="status">Coming soon</span><br>
+      Built a logistic regression model to flag employees at higher risk of
+      leaving and identified key drivers, including overtime and job role.
+    </div>
+
+    <h3>Exploratory Analysis &amp; Data Storytelling</h3>
+    <div class="project">
+      <span class="project-title">College Starting Age and Academic Performance</span>
+      <span class="tools-used">(Python)</span>
+      <span class="status">Coming soon</span><br>
+      Exploratory analysis of a UCI Machine Learning Repository dataset
+      examining whether students' age at enrollment relates to
+      first-semester grades.
+    </div>
+    <div class="project">
+      <span class="project-title">Netflix Top 10 Viewership Analysis</span>
+      <span class="tools-used">(Python)</span>
+      <span class="status">Coming soon</span><br>
+      Six visualizations showing that a title's staying power in the Top 10
+      reveals more than its launch-week performance.
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>
-      Explore my repositories and project updates on
-      <a href="https://github.com/CorHarr">GitHub</a>.
-    </p>
+    <ul>
+      <li><strong>Email:</strong>
+        <a href="mailto:charrison@my365.bellevue.edu">charrison@my365.bellevue.edu</a></li>
+      <li><strong>GitHub:</strong>
+        <a href="https://github.com/CorHarr">github.com/CorHarr</a></li>
+    </ul>
   </section>
 </main>
 
