@@ -1,4 +1,4 @@
-# Coral | Data Analyst
+# CorHarr | Data Analyst
 
 **Turning large, messy public data into clear, actionable recommendations.**
 
