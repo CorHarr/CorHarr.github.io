@@ -39,51 +39,37 @@ I approach data science with a commitment to accuracy, critical thinking, and cl
 
 These projects demonstrate a range of analytical methods, programming tools, and practical applications. Completed analyses are being added to GitHub, alongside three planned projects that will expand the portfolio's technical scope.
 
-*Portfolio update in progress*
+<p align="center"><em>Portfolio update in progress</em></p>
 
 ### Public Sector & Operations
 
-**TSA Complaint Hotspots** (Python)
-
-Analyzed about one million TSA complaint records by airport, category, and month to identify where training and resources would have the greatest impact.
-
-**White House Visitor Traffic Analysis** (Python, Plotly)
-
-Analyzed about 303,000 visitor records with interactive visualizations to identify traffic patterns and recommend staffing for peak periods.
-
-**Montgomery County Crime Rate Analysis** (R)
-
-Combined county, state, and Census data to compare crime per capita, finding the county has one of Maryland's lower crime rates when population is considered.
+- **TSA Complaint Hotspots** (Python)<br>
+  Analyzed about one million TSA complaint records by airport, category, and month to identify where training and resources would have the greatest impact.
+- **White House Visitor Traffic Analysis** (Python, Plotly)<br>
+  Analyzed about 303,000 visitor records with interactive visualizations to identify traffic patterns and recommend staffing for peak periods.
+- **Montgomery County Crime Rate Analysis** (R)<br>
+  Combined county, state, and Census data to compare crime per capita, finding the county has one of Maryland's lower crime rates when population is considered.
 
 ### Predictive Modeling & Machine Learning
 
-**Predicting Employee Attrition** (Python, scikit-learn)
-
-Built a logistic regression model to flag employees at higher risk of leaving and identified key drivers, including overtime and job role.
-
-**Detecting Unusual Medicare Provider Billing Patterns** (Python, TensorFlow) *(Planned)*
-
-Building a neural network to flag Medicare providers whose billing patterns stand out for review, applying a risk-analysis approach to federal program oversight.
+- **Predicting Employee Attrition** (Python, scikit-learn)<br>
+  Built a logistic regression model to flag employees at higher risk of leaving and identified key drivers, including overtime and job role.
+- **Detecting Unusual Medicare Provider Billing Patterns** (Python, TensorFlow) *(Planned)*<br>
+  Building a neural network to flag Medicare providers whose billing patterns stand out for review, applying a risk-analysis approach to federal program oversight.
 
 ### Exploratory Analysis & Data Storytelling
 
-**College Starting Age and Academic Performance** (Python)
-
-Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades.
-
-**Netflix Top 10 Viewership Analysis** (Python)
-
-Six visualizations showing that a title's staying power in the Top 10 reveals more than its launch-week performance.
+- **College Starting Age and Academic Performance** (Python)<br>
+  Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades.
+- **Netflix Top 10 Viewership Analysis** (Python)<br>
+  Six visualizations showing that a title's staying power in the Top 10 reveals more than its launch-week performance.
 
 ### Databases & Business Intelligence
 
-**120 Years of Olympic History** (SQL) *(Planned)*
-
-Querying a relational database of Olympic athletes and results to examine medal leaders by country, the growth of women's participation, and host-country advantage.
-
-**Hospital Quality Ratings Dashboard** (Power BI) *(Planned)*
-
-Building an interactive dashboard of CMS hospital star ratings to compare quality of care by state and ownership type.
+- **120 Years of Olympic History** (SQL) *(Planned)*<br>
+  Querying a relational database of Olympic athletes and results to examine medal leaders by country, the growth of women's participation, and host-country advantage.
+- **Hospital Quality Ratings Dashboard** (Power BI) *(Planned)*<br>
+  Building an interactive dashboard of CMS hospital star ratings to compare quality of care by state and ownership type.
 
 ---
 
