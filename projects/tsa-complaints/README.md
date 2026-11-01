@@ -15,6 +15,13 @@ Identify complaint patterns that can help prioritize training, staffing, and ope
 
 The analysis uses four datasets covering airport complaints, complaint categories, subcategories, and airport identifiers.
 
+- `complaints-by-airport.csv`: 41,721 rows and 4 columns.
+- `complaints-by-category.csv`: 241,588 rows and 7 columns.
+- `complaints-by-subcategory.csv`: 504,512 rows and 11 columns.
+- `iata-icao.csv`: 8,937 rows and 7 columns, used as an airport lookup table.
+
+Date columns were parsed as dates, complaint counts were converted to numeric values, airport codes were standardized to uppercase, and category and subcategory labels were cleaned.
+
 ## Data Sources
 
 **TSA Complaint Counts**
@@ -48,14 +55,13 @@ The airport reference data is licensed under Creative Commons Attribution-ShareA
 
 ## Key Findings
 
-- LAX, JFK, EWR, ATL, and MCO recorded some of the highest complaint volumes.
-- Complaint activity varied by airport and month.
-- Three complaint categories accounted for approximately 79% of complaints at the highest-volume airports.
+- LAX, JFK, EWR, ATL, and MCO recorded some of the highest complaint volumes among identified airports.
+- Complaint activity varied by airport and month. Several major airports experienced their highest monthly complaint volumes in October 2023, while others peaked in March.
+- Three complaint categories accounted for approximately 79% of complaints at the highest-volume airports: Expedited Passenger Screening, Mishandling of Passenger Property, and Customer Service.
 
 ## Practical Application
 
 The findings can help identify where targeted training, staffing adjustments, and process improvements may be most beneficial.
-
 
 ## Repository Structure
 
@@ -113,6 +119,8 @@ The analysis includes six visualizations:
 ## Reproducibility and Limitations
 
 The notebook uses relative file paths, so the required CSV files must be available in the same working directory when it executes.
+
+Some complaint records have missing airport identifiers, displayed as `NAN` in the Pareto chart. This category represents unidentified airports rather than a single airport and should not be interpreted as an airport ranking.
 
 Complaint counts represent reported complaint activity rather than a direct measure of airport performance. Airports with larger passenger volumes may receive more complaints because they serve more travelers.
 
