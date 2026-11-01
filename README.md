@@ -63,7 +63,9 @@ These projects demonstrate a range of analytical methods, programming tools, and
   Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades.
 - **Netflix Top 10 Viewership Analysis** (Python)<br>
   Six visualizations showing that a title's staying power in the Top 10 reveals more than its launch-week performance.
-
+- **Lottery Number Patterns and Randomness** (Python)<br>
+  Analyzed New York lottery data to examine whether winning numbers in Mega Millions, Powerball, and Pick 10 are drawn evenly, highlighting "hot" and "cold" numbers within each game.
+  
 ### Databases & Business Intelligence
 
 - **120 Years of Olympic History** (SQL) *(Planned)*<br>
