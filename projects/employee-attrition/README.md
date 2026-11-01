@@ -1,3 +1,4 @@
+
 # Predicting Employee Attrition
 
 **Tools:** Python, pandas, NumPy, SciPy, Matplotlib, scikit-learn
@@ -117,7 +118,7 @@ The analysis produces summary tables, model results, four visualizations, and a 
 
 ## Repository Structure
 
-```
+```text
 employee-attrition/
 ├── README.md                              Project overview and instructions
 ├── Predicting_Employee_Attrition.ipynb    Analysis and modeling notebook
@@ -127,3 +128,5 @@ employee-attrition/
 ## Limitations
 
 The dataset is synthetic and does not establish causal relationships. The sample size is relatively small, and the data does not distinguish between voluntary and involuntary departures. Results would require validation using real organizational data before operational use.
+
+The risk tiers were validated using the original model and would require further validation after removing sensitive features.
