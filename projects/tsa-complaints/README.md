@@ -56,6 +56,64 @@ The airport reference data is licensed under Creative Commons Attribution-ShareA
 
 The findings can help identify where targeted training, staffing adjustments, and process improvements may be most beneficial.
 
-## Project Files
 
-Analysis files and visualizations will be added as the portfolio develops.
+## Repository Structure
+
+The project files are organized as follows:
+
+```text
+tsa-complaints/
+├── README.md
+├── TSA_Complaint_Hotspots.ipynb
+├── complaints-by-airport.csv
+├── complaints-by-category.csv
+└── iata-icao.csv
+```
+
+The additional dataset, `complaints-by-subcategory.csv`, must be downloaded separately from the Data Liberation Project source linked above.
+
+## Requirements
+
+- Python 3
+- Jupyter Notebook
+- pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- IPython
+
+## How to Run
+
+1. Download the project notebook and the three included CSV files.
+2. Download `complaints-by-subcategory.csv` from the Data Liberation Project source listed in the Data Sources section.
+3. Place all four CSV files and `TSA_Complaint_Hotspots.ipynb` in the same folder.
+4. Install the required Python packages if they are not already installed:
+
+   ```bash
+   pip install notebook pandas numpy matplotlib seaborn plotly ipython
+   ```
+
+5. Open `TSA_Complaint_Hotspots.ipynb` in Jupyter Notebook.
+6. Restart the kernel and run all cells in sequence.
+
+The analysis produces summary tables, six visualizations, and a generated file named `top_airports_by_complaints.csv`.
+
+## Visualizations
+
+The analysis includes six visualizations:
+
+1. Pareto chart of airport complaint concentration.
+2. Geographic map of complaint distribution.
+3. Heatmap of monthly complaints at the top 15 airports.
+4. Box plot of monthly complaint distributions.
+5. Bar chart of leading complaint categories.
+6. National complaint trend with a 12-month rolling average.
+
+## Reproducibility and Limitations
+
+The notebook uses relative file paths, so the required CSV files must be available in the same working directory when it executes.
+
+Complaint counts represent reported complaint activity rather than a direct measure of airport performance. Airports with larger passenger volumes may receive more complaints because they serve more travelers.
+
+Findings should therefore be interpreted as indicators of complaint concentration and opportunities for further investigation, not definitive rankings of airport service quality.
