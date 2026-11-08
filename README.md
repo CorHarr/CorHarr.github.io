@@ -46,7 +46,7 @@ These projects demonstrate a range of analytical methods, programming tools, and
 - **TSA Complaint Hotspots** (Python)<br>
   Analyzed about one million TSA complaint records by airport, category, and month to identify where training and resources would have the greatest impact.
 - **White House Visitor Traffic Analysis** (Python, Plotly)<br>
-  Analyzed about 303,000 visitor records with interactive visualizations to identify traffic patterns and recommend staffing for peak periods.
+  Analyzed 303,374 White House visitor appointment records from January through May 2023 to identify hourly, daily, and monthly scheduling patterns and recommend staffing for peak periods.
 - **Montgomery County Crime Rate Analysis** (R)<br>
   Combined county, state, and Census data to compare crime per capita, finding the county has one of Maryland's lower crime rates when population is considered.
 
