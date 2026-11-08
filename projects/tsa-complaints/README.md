@@ -1,4 +1,3 @@
-
 # TSA Complaint Hotspots
 
 **Tools:** Python, pandas, Matplotlib, Seaborn
@@ -57,7 +56,7 @@ The airport reference data is licensed under Creative Commons Attribution-ShareA
 
 - LAX, JFK, EWR, ATL, and MCO recorded some of the highest complaint volumes among identified airports.
 - Complaint activity varied by airport and month. Several major airports experienced their highest monthly complaint volumes in October 2023, while others peaked in March.
-- Three complaint categories accounted for approximately 79% of complaints at the highest-volume airports: Expedited Passenger Screening, Mishandling of Passenger Property, and Customer Service.
+- Three complaint categories accounted for approximately 70% of complaints at the highest-volume airports: Expedited Passenger Screening, Mishandling of Passenger Property, and Customer Service.
 
 ## Practical Application
 
@@ -103,7 +102,7 @@ The additional dataset, `complaints-by-subcategory.csv`, must be downloaded sepa
 5. Open `TSA_Complaint_Hotspots.ipynb` in Jupyter Notebook.
 6. Restart the kernel and run all cells in sequence.
 
-The analysis produces summary tables, six visualizations, and a generated file named `top_airports_by_complaints.csv`.
+The analysis produces summary tables, six visualizations, and two generated files: `top_airports_by_complaints.csv` and `tsa-pareto-chart.png`.
 
 ## Visualizations
 
@@ -120,7 +119,7 @@ The analysis includes six visualizations:
 
 The notebook uses relative file paths, so the required CSV files must be available in the same working directory when it executes.
 
-Some complaint records have missing airport identifiers, displayed as `NAN` in the Pareto chart. This category represents unidentified airports rather than a single airport and should not be interpreted as an airport ranking.
+About 43% of complaint records (437,786 of 1,021,281) have no airport code. These complaints are excluded from the airport rankings and percentages but are included in the national complaint trend.
 
 Complaint counts represent reported complaint activity rather than a direct measure of airport performance. Airports with larger passenger volumes may receive more complaints because they serve more travelers.
 
