@@ -62,7 +62,7 @@ These projects demonstrate a range of analytical methods, programming tools, and
 - **College Starting Age and Academic Performance** (Python)<br>
   Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades.
 - **Netflix Top 10 Viewership Analysis** (Python)<br>
-  Six visualizations showing that a title's staying power in the Top 10 reveals more than its launch-week performance.
+  Analyzed Netflix Top 10 viewing data from 2021 to 2024 to compare initial popularity with staying power, finding that TV drew about 71% of viewing hours and that 8 of the 11 longest-running titles were non-English.
 - **Lottery Number Patterns and Randomness** (Python)<br>
   Analyzed New York lottery data to examine whether winning numbers in Mega Millions, Powerball, and Pick 10 are drawn evenly, highlighting "hot" and "cold" numbers within each game.
   
