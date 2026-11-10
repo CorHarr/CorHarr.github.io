@@ -48,7 +48,7 @@ These projects demonstrate a range of analytical methods, programming tools, and
 - **White House Visitor Traffic Analysis** (Python, Plotly)<br>
   Analyzed 303,374 White House visitor appointment records from January through May 2023 to identify hourly, daily, and monthly scheduling patterns and recommend staffing for peak periods.
 - **Montgomery County Crime Rate Analysis** (R)<br>
-  Combined county, state, and Census data to compare crime per capita, finding the county has one of Maryland's lower crime rates when population is considered.
+  Combined county, state, and Census data to compare crime per capita, finding that the county has one of Maryland’s lowest crime rates when population is considered and that its crime rate fell about 71% between 1980 and 2020.
 
 ### Predictive Modeling & Machine Learning
 
