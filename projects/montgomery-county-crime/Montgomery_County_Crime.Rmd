@@ -1,0 +1,501 @@
+---
+title: "Montgomery County Crime Analysis"
+output: html_document
+urlcolor: blue
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## **Project Overview**
+
+Analyzed Montgomery County, Maryland crime data alongside statewide crime statistics and Census population data to evaluate how the county's public safety compares with other Maryland jurisdictions. The analysis examines crime trends from 1975 through 2020 and compares raw crime counts with population-adjusted rates to determine whether Montgomery County is a relatively safe place to live. The findings provide context for public safety planning and resource allocation.
+
+# Part ONE
+
+## I. Introduction
+
+This project examined whether Montgomery County, Maryland (MOCO) is a
+safe place to live. Crime levels affect quality of life and housing
+values, making them an important consideration when choosing where to
+buy a home. Crime statistics provide quantitative evidence that can
+show where incidents occur, how often they occur, and how they change
+over time.
+
+## II. Research Questions
+
+The analysis focused on the following questions:
+
+1.  How can safety be defined and measured?
+2.  How much crime is reported in MOCO, both in total and per capita?
+3.  How do violent and property crime compare?
+4.  How does MOCO compare with other Maryland jurisdictions?
+5.  How does MOCO compare with counties nationwide?
+6.  How has crime in MOCO changed over time?
+
+## III. Approach
+
+Exploratory data analysis (EDA) was used to examine reported crime
+patterns in Montgomery County, Maryland. R was used to clean,
+combine, and analyze crime records from multiple sources and produce
+visual summaries of the findings.
+
+The analysis examines reported crime volumes, historical trends,
+and comparisons with other jurisdictions. Population data was
+incorporated to calculate per capita crime rates, allowing
+comparisons that account for differences in population size.
+
+## IV. How the Approach Addresses the Problem
+
+The analysis addressed whether MOCO is a safe place to live in several ways. A map of reported incidents shows where crime occurs across the county. Bar charts compare total crime and crime per capita across Maryland counties, and a scatterplot places Montgomery County among counties nationwide by population and total crime. Line charts show how the county's crime totals and crime rate per 100,000 people changed from 1975 through 2020. A scatterplot of census tracts shows how the number of crimes relates to population within the county.
+
+## V. Data
+
+The analysis uses four datasets containing reported crime incidents,
+county-level crime statistics, historical crime trends, and population
+estimates. Data preparation included standardizing location identifiers,
+selecting relevant crime categories, and combining crime and population
+information for comparison.
+
+### Montgomery County Crime Data
+
+Source: [Montgomery County Open Data](https://catalog.data.gov/dataset/crime)
+
+The `1-Crime Reset.csv` dataset contains the 35,460 crime incidents
+reported in Montgomery County in 2022. Its geographic information includes location coordinates and Census identifiers used to examine crime across
+communities. The dataset was cleaned and supplemented with geographic
+information to support location-based comparisons.
+
+### United States Crime Rates by County
+
+Source: [Kaggle](https://www.kaggle.com/datasets/mikejohnsonjr/united-states-crime-rates-by-county)
+
+The `2-United States_crime_rates_by_county.csv` dataset contains
+county-level crime statistics and population figures. It supports
+comparisons between Montgomery County, other Maryland counties,
+and jurisdictions nationwide.
+
+### Montgomery County Historical Crime Data
+
+Source: [Maryland Open Data](https://opendata.maryland.gov/Public-Safety/Violent-Crime-Property-Crime-by-County-1975-to-Pre/jwfa-fdxs/data)
+
+The `3-Montgomery_County_Crime_by_year.csv` dataset contains annual
+crime statistics from 1975 through 2020. It includes violent and
+property crime totals, population figures, and crime rates per
+100,000 residents. These records support the historical trend analysis.
+
+### Montgomery County Census Tract Population
+
+Source: U.S. Census Bureau, American Community Survey 5-year estimates, 2018–2022.
+
+The `5-MOCO_Tract_Population_2022.csv` dataset contains population
+estimates by Census tract within Montgomery County. Census tract
+identifiers allow population estimates to be joined with geographically
+referenced crime records for comparisons within the county.
+
+## VI. Required Packages
+
+The following R packages are used in this analysis:
+
+-   readr
+-   dplyr
+-   ggplot2
+-   forcats
+-   tidyverse
+-   magick
+-   knitr
+-   scales
+
+# Part TWO
+
+## I. Importing and Cleaning the Data
+
+The four datasets were reviewed and prepared for analysis to ensure
+consistent geographic identifiers, crime classifications, and
+population comparisons.
+
+**Data.1 — Montgomery County Crime Data**
+
+The dataset contains 35,460 reported crime incidents from 2022.
+Because block addresses and police districts were not precise enough
+for geographic analysis, each record's latitude and longitude were
+run through Geocodio, which added Census place names and Census tract
+codes. Geocodio matched 35,102 records; the remaining 358 have no
+tract information. The full Census tract code, which includes the
+state and county FIPS codes, was converted into a GEOID field to
+support comparisons with Census population data.
+
+**Data.2 — United States Crime Rates by County**
+
+A `total.crime` variable was calculated using eight crime
+categories: murder, rape, robbery, aggravated assault, burglary,
+larceny, motor vehicle theft, and arson. A `Distinguish` variable
+was also created to identify Montgomery County in visual
+comparisons with other jurisdictions.
+
+**Data.3 — Montgomery County Historical Crime Data**
+
+This dataset required no additional modifications. Its annual
+crime totals, population figures, and crime rates support the
+historical analysis from 1975 through 2020.
+
+**New.Data.4 — Montgomery County Census Tract Population**
+
+Population estimates from the 2018–2022 American Community Survey
+were saved locally as `5-MOCO_Tract_Population_2022.csv`.
+GEOID is read as text so that these population estimates can be
+joined with the geographically referenced crime records in Data.1.
+
+```{r Libraries, echo=FALSE, warning=FALSE, message=FALSE}
+#This is where the packages are loaded and chunk options are set.
+#The CSV files must be in the same folder as this Rmd file.
+
+library(readr)
+require("knitr")
+
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(magick)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(forcats)
+```
+
+## II. Look of Final Data Sets
+
+The four datasets were prepared for analysis, with variables added
+where necessary to support geographic comparisons and crime rate
+calculations. Shared geographic identifiers allow crime records to
+be connected with population and location information.
+
+- **Data.1** contains 35,460 observations and 66 columns, including
+  35,102 records with Census tract identifiers and 358 without.
+- **Data.2** contains 3,136 observations and 26 columns after
+  creating the `total.crime` and `Distinguish` variables.
+- **Data.3** remains unchanged, with 46 observations and 31 columns.
+- **New.Data.4** contains 232 observations and 5 columns, with GEOID
+  preserved as text to support matching with Data.1.
+
+```{r Final Datasets}
+# Load Montgomery County crime records
+Data.1 <- read.csv("1-Crime Reset.csv") %>%
+  mutate(GEOID = as.character(Full.FIPS..tract.))
+
+# Load county crime statistics and create comparison variables
+Data.2 <- read.csv("2-United States_crime_rates_by_county.csv") %>%
+  mutate(
+    total.crime = MURDER + RAPE + ROBBERY + AGASSLT +
+                  BURGLRY + LARCENY + MVTHEFT + ARSON,
+    Distinguish = county_name == "Montgomery County, MD")
+
+# Load historical Montgomery County crime data
+Data.3 <- read.csv("3-Montgomery_County_Crime_by_year.csv")
+
+# Load saved Census tract population estimates
+New.Data.4 <- read.csv(
+  "5-MOCO_Tract_Population_2022.csv",
+  colClasses = c(GEOID = "character"))
+```
+
+## III. Not Self-Evident Information
+
+The `Offence.Code` variable in Data.1 identifies different crime
+classifications, but the meaning and criteria behind those codes are
+not immediately apparent. For example, homicide classifications
+distinguish between different circumstances and relationships involving
+the individuals affected.
+
+Understanding these distinctions could influence how someone evaluates
+neighborhood safety. A person might assess crimes involving family
+members differently from incidents involving strangers. However,
+determining whether those distinctions are meaningful would require
+additional information about how offenses are classified and recorded.
+
+This analysis focuses on reported crime counts and rates rather than
+interpreting the circumstances of individual incidents.
+
+## IV. Different Ways to Look at the Data
+
+The same data could be examined in several other ways to judge whether Montgomery County is a safe place to live. Incidents could be broken down by street or neighborhood to show where crime is most concentrated. Police district boundaries could be compared with population to see whether some districts serve too many residents to respond efficiently. The time of day or day of the week could show when crimes are most likely to occur. A reader might also focus on a single crime type; for example, someone might treat aggravated assaults as the main measure of safety and set other offenses aside.
+
+The color-coded map below shows how widely reported incidents are spread across the county, which is why the same information can be divided and interpreted in so many ways.
+
+```{r Visual of Crimes across County, out.width="95%"}
+#This is a display that shows a conglomerate of crimes across the county
+
+Crime.map <- image_read("Screenshotmoco.png")
+
+Crime.map
+
+```
+
+*Screenshot of an online map of reported Montgomery County crime incidents. Base map © Mapbox © OpenStreetMap contributors.*
+
+## V. Plan to Slice and Dice the Data
+
+The county comparisons and historical trends define crime as violent and property crimes only. The county comparison uses murder, rape, robbery, aggravated assault, burglary, larceny, motor vehicle theft, and arson; the historical data uses the same categories except arson. Crimes against society, such as drug offenses, are not included in these measures.
+
+The 2022 incident data (Data.1) includes all 35,460 reported incidents, including 5,307 crimes against society. The neighborhood table and the Census tract scatterplot therefore reflect all reported offenses, not only violent and property crimes.
+
+Crime is also compared with population, because some areas have far fewer residents than others. Population-adjusted rates allow places of different sizes to be compared, and the historical data shows how Montgomery County's crime totals and rates changed from 1975 through 2020.
+
+## VI. Summarizing Data to Answer Key Questions
+
+The analysis uses tables and visualizations to examine crime patterns
+in Montgomery County and compare them with other jurisdictions.
+Crime counts, population-adjusted rates, geographic distributions,
+and historical trends provide different perspectives on the county's
+public safety.
+
+
+## VII. Plots and Tables to Illustrate Findings
+
+```{r Table of Incidents by City}
+#This is a table that lists incidents of crime for places in the County
+
+#Count incidents for each place
+Group.Place <- Data.1 %>%
+    group_by(Place.Name) %>%
+    summarise(number.of.crime = n())
+
+#Label records that have no Census place name
+Group.Place <- Group.Place %>%
+    mutate(Place.Name = ifelse(is.na(Place.Name) | Place.Name == "",
+                          "No Census place name", Place.Name))
+
+#Sort from most to fewest incidents
+Group.Place <- Group.Place %>%
+    arrange(desc(number.of.crime))
+
+#Display the table with readable column names
+kable(Group.Place, col.names = c("Place", "Number of Incidents"))
+```
+
+```{r Combine data for Population vs Crime by Town}
+#Count incidents within each identified Census tract
+Group.crime <- Data.1 %>%
+    filter(!is.na(GEOID), GEOID != "") %>%
+    group_by(GEOID) %>%
+    summarise(number.of.crime = n(), .groups = "drop")
+
+#Join tract crime counts with Census population estimates,
+#keeping only Montgomery County tracts
+Pop.Crime.by <- inner_join(Group.crime, New.Data.4, by = "GEOID")
+```
+
+
+```{r Plot Crime vs Town Population}
+#This plots reported incidents against population for each Census tract.
+#The trend line rises only slightly, and many tracts with similar
+#populations have very different numbers of incidents.
+
+Pop.Crime.by %>%
+    ggplot(aes(x = estimate, y = number.of.crime)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    labs(
+        title = "Reported Crime Incidents vs. Population",
+        subtitle = "Montgomery County Census Tracts, 2022",
+        x = "Census Tract Population",
+        y = "Number of Reported Incidents"
+    )
+```
+
+
+```{r Total Crime - Filtering to Maryland}
+#Prepare Maryland county data for the table and comparison charts
+
+#Keep Maryland counties and the columns needed for the table and charts
+MD.Crime <- Data.2 %>%
+    filter(FIPS_ST == 24) %>% #this is the code for MD
+    arrange(county_name) %>%
+    select(county_name, population, total.crime, Distinguish)
+
+#Display the table with readable column names and comma separators
+kable(select(MD.Crime, county_name, population, total.crime),
+      col.names = c("County", "Population", "Total Crime"),
+      format.args = list(big.mark = ","))
+```
+
+
+
+```{r Incidents by City and MOCO comparison}
+#Compare total reported crime across Maryland counties,
+#highlighting Montgomery County
+
+MD.Crime %>%
+    ggplot(aes(x = fct_reorder(county_name, total.crime),
+               y = total.crime,
+               fill = Distinguish)) +
+    geom_col() +
+    coord_flip() +
+    scale_y_continuous(labels = scales::comma) +
+    theme(
+    legend.position = "none",
+    plot.margin = margin(5.5, 20, 5.5, 5.5)) +
+    labs(
+        title = "Total Crime by County in Maryland",
+        x = "County",
+        y = "Total Reported Crimes"
+    )
+```
+
+
+```{r Incident Comparison Per Capita}
+#Compare crime per 100,000 residents across Maryland counties,
+#highlighting Montgomery County
+
+MD.Crime %>%
+    ggplot(aes(x = fct_reorder(county_name, total.crime / population * 100000),
+               y = total.crime / population * 100000,
+               fill = Distinguish)) +
+    geom_col() +
+    coord_flip() +
+    scale_y_continuous(labels = scales::comma) +
+    theme(
+        legend.position = "none",
+        plot.margin = margin(5.5, 20, 5.5, 5.5)) +
+    labs(
+        title = "Crime per 100,000 Residents by County in Maryland",
+        x = "County",
+        y = "Reported Crimes per 100,000 Residents"
+    )
+```
+
+
+```{r Plot Crime vs County Population}
+#Compare population and total crime for counties nationwide,
+#highlighting Montgomery County in teal. Montgomery County has more
+#crime than most counties, but fewer crimes than many counties
+#of similar population.
+
+#Keep counties with positive crime and population values (log scale cannot show zero)
+US.Crime <- Data.2 %>%
+    filter(total.crime > 0, population > 0)
+
+US.Crime %>%
+    ggplot(aes(x = population, y = total.crime, col = Distinguish)) +
+    geom_point() +
+    geom_point(data = filter(US.Crime, Distinguish), size = 3) +
+    scale_x_log10(labels = scales::comma) +
+    scale_y_log10(labels = scales::comma) +
+    theme(legend.position = "none") +
+    labs(
+        title = "Where Montgomery County Lies Among U.S. Counties",
+        x = "Population (log scale)",
+        y = "Total Crime (log scale)"
+    )
+```
+
+
+```{r Line Plot of County Crime Trend}
+#Show how total reported crime changed in Montgomery County
+#from 1975 through 2020.
+#Totals peaked in 1991 and 1995, then declined through 2020.
+
+Data.3 %>%
+    ggplot(aes(x = YEAR, y = GRAND.TOTAL)) +
+    geom_line() +
+    scale_y_continuous(labels = scales::comma) +
+    labs(
+        title = "Montgomery County Crime Trend, 1975-2020",
+        x = "Year",
+        y = "Total Reported Crimes"
+    )
+```
+
+
+```{r Plot of incidents per 100K people}
+#Show how Montgomery County's reported crime rate changed
+#from 1975 through 2020, adjusted for population.
+#The rate peaked in 1980 and has generally declined since.
+
+Data.3 %>%
+    ggplot(aes(x = YEAR, y = GRAND.TOTAL / POPULATION * 100000)) +
+    geom_line() +
+    scale_y_continuous(labels = scales::comma) +
+    labs(
+        title = "Montgomery County Crime per 100,000 Residents, 1975-2020",
+        x = "Year",
+        y = "Reported Crimes per 100,000 Residents"
+    )
+```
+
+
+```{r Crime types over time}
+#Compare violent and property crimes in Montgomery County over time.
+#Violent crime stayed far lower than property crime throughout, while
+#property crime fell sharply after the mid-1990s.
+
+Data.3 %>%
+    select(YEAR, VIOLENT.CRIME.TOTAL, PROPERTY.CRIME.TOTALS) %>%
+    pivot_longer(cols = c(VIOLENT.CRIME.TOTAL, PROPERTY.CRIME.TOTALS),
+                 names_to = "Type.of.Crime",
+                 values_to = "Amount.of.Crime") %>%
+    ggplot(aes(x = YEAR, y = Amount.of.Crime, colour = Type.of.Crime)) +
+    geom_line() +
+    scale_y_continuous(labels = scales::comma) +
+    scale_colour_discrete(labels = c(PROPERTY.CRIME.TOTALS = "Property crime",
+                                     VIOLENT.CRIME.TOTAL = "Violent crime")) +
+    labs(
+        title = "Violent and Property Crime in Montgomery County, 1975-2020",
+        x = "Year",
+        y = "Reported Crimes",
+        colour = "Type of Crime"
+    )
+```
+
+
+## VIII. Incorporating Machine Learning Techniques
+
+In a May 2018 Medium article, Babak Shahian Jahromi described a
+machine learning project that examined neighborhood safety in
+Chicago. The project produced a web application that accepted an
+address or location and a date and time, displayed a prediction
+associated with crime risk, and marked nearby incidents on a map.
+However, the model predicted whether an arrest was made in a
+recorded crime incident, not the actual probability of a crime
+occurring at a particular place and time.
+
+The analyst used historical crime records, removed duplicates, and
+split dates and times into separate components. Reports with and
+without an arrest were balanced, and the data was divided into
+training and testing sets using an 80/20 split. Logistic regression,
+naïve Bayes, support vector machines, k-nearest neighbors, decision
+trees, random forest, and XGBoost models were compared. The finished
+application offered two options. Users could enter a location,
+date, and time to obtain a prediction presented as a safety
+assessment, or enter an address to find nearby crimes.
+
+A similar approach could extend this analysis. The 2022 Montgomery
+County data includes incident dates and times, coordinates, and crime
+types, which could support a model examining crime patterns by
+location and time. Developing a reliable estimate of future crime
+risk would require an appropriately defined prediction target and
+additional model validation.
+
+# Part THREE
+
+## I. Analysis
+
+Raw crime counts initially suggested that Montgomery County had a serious crime problem. In 2016, the county reported 19,559 crimes, the fourth-highest total in Maryland after Baltimore City, Prince George's County, and Baltimore County. However, Montgomery County was also the most populous jurisdiction in the state. Using the dataset's 2016 crime counts and 2013 population estimates, its rate of 1,924 crimes per 100,000 residents was the fifth lowest of Maryland's 24 jurisdictions and less than a third of Baltimore City's rate of 6,261.
+
+The national comparison produced a similar result. Among the 120 U.S. counties with 500,000 to 2 million residents, Montgomery County had the 13th lowest crime rate.
+
+Historical data showed a long-term decline. Total reported crime peaked in 1991 and 1995 at roughly 35,000 incidents, then fell to 16,594 in 2020. Over the same period, the population nearly doubled, from 571,436 in 1975 to 1,055,918 in 2020. As a result, the crime rate per 100,000 residents fell by about 71 percent, from its 1980 peak of 5,482 to 1,572 in 2020. Violent crime remained far lower than property crime throughout, and most of the overall decline came from property crime.
+
+Within the county, reported incidents in 2022 were concentrated in the larger communities, led by Silver Spring, Gaithersburg, and Germantown. At the Census tract level, the relationship between population size and reported incidents was weak, with substantial differences in crime counts even among tracts with similar populations.
+
+## II. Implications
+
+The results indicate that Montgomery County is a relatively safe place to live compared with other Maryland jurisdictions and with counties of similar size nationwide, and that its crime rate has declined over several decades. However, these findings reflect reported crimes only. The county-level comparisons include selected violent and property crimes and exclude offenses such as drug violations, and not all law enforcement agencies report data every year.
+
+## III. Limitations
+
+The datasets cover different periods. The national comparison uses 2016 crime counts and 2013 population estimates, the historical data ends in 2020, and the incident data covers 2022. Many crimes are under-reported, and jurisdictions classify and record offenses differently. The Census tract comparison includes 34,931 incidents matched to population estimates, while records without matching tract information were excluded.
+
+## IV. Concluding Remarks
+
+Montgomery County, the most populous county in Maryland, had one of the state's lowest crime rates after adjusting for population, and its rate declined substantially between 1980 and 2020 even as its population grew. Although the analysis could be expanded, the available data provided sufficient evidence to assess the level of safety a resident could expect in Montgomery County.
+
