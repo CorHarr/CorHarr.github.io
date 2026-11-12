@@ -46,7 +46,7 @@ These projects demonstrate a range of analytical methods, programming tools, and
 - **TSA Complaint Hotspots** (Python)<br>
   Analyzed about one million TSA complaint records by airport, category, and month to identify where training and resources would have the greatest impact.
 - **White House Visitor Traffic Analysis** (Python, Plotly)<br>
-  Analyzed 303,374 White House visitor appointment records from January through May 2023 to identify hourly, daily, and monthly scheduling patterns and recommend staffing for peak periods.
+  Tracked 303,374 White House visitor appointments from January through May 2023 to pinpoint hourly, daily, and monthly scheduling patterns and recommend staffing for peak periods.
 - **Montgomery County Crime Rate Analysis** (R)<br>
   Combined county, state, and Census data to compare crime per capita, finding that the county has one of Maryland’s lowest crime rates when population is considered and that its crime rate fell about 71% between 1980 and 2020.
 
@@ -60,9 +60,9 @@ These projects demonstrate a range of analytical methods, programming tools, and
 ### Exploratory Analysis & Data Storytelling
 
 - **College Starting Age and Academic Performance** (Python)<br>
-  Exploratory analysis of a UCI Machine Learning Repository dataset examining whether students' age at enrollment relates to first-semester grades.
+  Revealed a striking age gap in first-semester outcomes among 4,424 college students. Pass rates dropped from 88% for ages 17–19 to about 74% for those 26 and older, yet average grades among students who passed remained nearly identical across age groups.
 - **Netflix Top 10 Viewership Analysis** (Python)<br>
-  Analyzed Netflix Top 10 viewing data from 2021 to 2024 to compare initial popularity with staying power, finding that TV drew about 71% of viewing hours and that 8 of the 11 longest-running titles were non-English.
+  Compared initial popularity with staying power in Netflix Top 10 viewing data from 2021 to 2024, finding that TV drew about 71% of viewing hours and that 8 of the 11 longest-running titles were non-English.
 - **Lottery Number Patterns and Randomness** (Python)<br>
   Analyzed New York lottery data to examine whether winning numbers in Mega Millions, Powerball, and Pick 10 are drawn evenly, highlighting "hot" and "cold" numbers within each game.
   
