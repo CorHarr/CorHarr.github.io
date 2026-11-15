@@ -27,7 +27,7 @@ I approach data science with a commitment to accuracy, critical thinking, and cl
 ### Tools and Technical Skills
 
 - **Programming and Analysis:** Python, R, SQL
-- **Python Libraries:** pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn
+- **Python Libraries:** pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn, TensorFlow
 - **R Visualization:** ggplot2
 - **Business Intelligence:** Power BI, Excel
 - **Development Environment:** Jupyter Notebook, RStudio
@@ -37,7 +37,7 @@ I approach data science with a commitment to accuracy, critical thinking, and cl
 
 ## Featured Work
 
-These projects demonstrate a range of analytical methods, programming tools, and practical applications. Completed analyses are being added to GitHub, alongside three planned projects that will expand the portfolio's technical scope.
+These projects demonstrate a range of analytical methods, programming tools, and practical applications. Completed analyses are being added to GitHub, alongside two planned projects that will expand the portfolio's technical scope.
 
 <p align="center"><em>Portfolio update in progress</em></p>
 
@@ -54,8 +54,8 @@ These projects demonstrate a range of analytical methods, programming tools, and
 
 - **Predicting Employee Attrition** (Python, scikit-learn)<br>
   Built a logistic regression model to flag employees at higher risk of leaving and identified key drivers, including overtime and job role.
-- **Detecting Unusual Medicare Provider Billing Patterns** (Python, TensorFlow) *(Planned)*<br>
-  Building a neural network to flag Medicare providers whose billing patterns stand out for review, applying a risk-analysis approach to federal program oversight.
+- **Detecting Unusual Medicare Provider Billing Patterns** (Python, TensorFlow)<br>
+  Trained TensorFlow neural networks to flag unusual billing among 177,266 Medicare providers, finding that payments per patient were similar across specialties and that payments and charge ratios drove most of the flags.
 
 ### Exploratory Analysis & Data Storytelling
 
