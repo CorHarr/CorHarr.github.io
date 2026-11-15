@@ -1,252 +1,378 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CorHarr | Data Science Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      margin: 0;
-      color: #263445;
-      background: #f7f9fc;
-    }
-    header {
-      background: #203c60;
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-    }
-    header h1 { margin-bottom: 5px; }
-    .tagline { font-size: 1.1em; margin: 8px 0; }
-    nav { margin-top: 20px; }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: underline;
-    }
-    main {
-      max-width: 900px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-    section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 22px;
-      border-radius: 8px;
-    }
-    h2 { color: #203c60; }
-    h3 {
-      color: #203c60;
-      margin-top: 28px;
-      margin-bottom: 8px;
-      font-size: 1.1em;
-    }
-    li { margin-bottom: 12px; }
-    a { color: #1257a0; }
-    .project { margin-bottom: 18px; }
-    .project-title { font-weight: bold; }
-    .tools-used { color: #555; }
-    .status {
-      display: inline-block;
-      font-size: 0.8em;
-      background: #e8eef6;
-      color: #203c60;
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-left: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
+<h1>Detecting Unusual Medicare Provider Billing Patterns</h1>
 
-<header>
-  <h1>CorHarr</h1>
-  <p class="tagline">Data Analyst | Data Science | Visualization</p>
-  <p>Turning large, messy public data into clear, actionable recommendations.</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-  
-<section id="about">
-  <h2>About</h2>
-
-  <p>
-    I am a data analyst completing my M.S. in Data Science
-    at Bellevue University, with the goal of supporting
-    evidence-based decision-making in the federal government.
-    My professional background in risk analysis strongly
-    shapes how I work. I approach complex problems by
-    critically questioning data, evaluating evidence, and
-    identifying patterns that drive practical solutions.
-  </p>
-
-  <p>
-    Building on this foundation, my graduate studies have
-    deepened my technical toolkit in Python, R, SQL,
-    statistical analysis, data visualization, and predictive
-    modeling. My project work applies public and organizational
-    data to answer real-world questions across public safety,
-    transportation, government operations, education,
-    entertainment, and workforce analytics.
-  </p>
-
-  <p>
-    I approach data science with a commitment to accuracy,
-    critical thinking, and clear communication. I aim to
-    bridge the gap between technical complexity and actionable
-    insights for both technical and nontechnical audiences.
-  </p>
-
-  <h3>What I Bring</h3>
-
-  <ul>
-    <li>
-      <strong>Data cleaning and preparation:</strong>
-      standardizing codes, parsing dates, fixing data types,
-      and merging multiple sources (such as four separate
-      TSA complaint datasets) into analysis-ready data.
-    </li>
-
-    <li>
-      <strong>Working at scale:</strong>
-      analyzing datasets ranging from hundreds of thousands
-      to about one million records.
-    </li>
-
-    <li>
-      <strong>Problem framing:</strong>
-      looking past the obvious metric to find the more useful
-      question, such as measuring a Netflix title's staying
-      power rather than its launch week.
-    </li>
-
-    <li>
-      <strong>Actionable recommendations:</strong>
-      translating findings into decisions leaders can use,
-      including where to direct resources, when to adjust
-      staffing, and how to identify employees who may be
-      at risk of leaving.
-    </li>
-
-    <li>
-      <strong>Independent and collaborative:</strong>
-      owning a project from start to finish and contributing
-      as part of a team.
-    </li>
-  </ul>
-
-  <h3>Tools and Technical Skills</h3>
-
-  <ul>
-    <li><strong>Programming and Analysis:</strong>
-      Python, R, SQL</li>
-
-    <li><strong>Python Libraries:</strong>
-      pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn, TensorFlow</li>
-
-    <li><strong>R Visualization:</strong>
-      ggplot2</li>
-
-    <li><strong>Business Intelligence:</strong>
-      Power BI, Excel</li>
-
-    <li><strong>Development Environment:</strong>
-      Jupyter Notebook, RStudio</li>
-
-    <li><strong>Analytical Methods:</strong>
-      Data Cleaning, Exploratory Data Analysis,
-      Statistical Analysis, Data Visualization,
-      Data Storytelling, Predictive Modeling</li>
-  </ul>
-</section>
-
-
-<section id="projects">
-  <h2>Featured Work</h2>
-
-  <p>
-    These projects demonstrate a range of analytical methods,
-    programming tools, and practical applications. Completed
-    analyses are being added to GitHub, alongside two planned
-    projects that will expand the portfolio's technical scope.
-  </p>
-
-<div style="text-align: center; margin: 16px 0 16px 0;">
-  <span style="display: inline-block; padding: 6px 14px; background: #e8eef8; color: #4f6280; border-radius: 999px; font-size: 0.95em; font-style: italic; vertical-align: middle;">
-    Portfolio update in progress
-  </span>
-</div>
-
-<h3 style="margin-top: 8px;">Public Sector &amp; Operations</h3>
+<h2>Tools and Libraries</h2>
 <ul>
+  <li>Python</li>
+  <li>pandas and NumPy</li>
+  <li>Matplotlib and Seaborn</li>
+  <li>scikit-learn</li>
+  <li>TensorFlow/Keras</li>
+  <li>Jupyter Notebook</li>
+</ul>
 
-    <li>
-      <strong>
-        <a href="https://github.com/CorHarr/CorHarr.github.io/tree/main/projects/tsa-complaints">
-          TSA Complaint Hotspots
-        </a>
-      </strong> (Python)
-      <p>
-        Analyzed about one million TSA complaint records by
-        airport, category, and month to identify where training
-        and resources would have the greatest impact.
-      </p>
+<h2>Overview</h2>
+<p>
+  This project examines unusual Medicare billing patterns among
+  177,266 individual providers in Internal Medicine and Family
+  Practice. Using 2024 data from the Centers for Medicare &amp;
+  Medicaid Services (CMS), the analysis compares traditional
+  statistical outlier detection (Z-score) with TensorFlow
+  autoencoders to identify providers whose billing differs
+  from their specialty peers.
+</p>
+<p>
+  The goal is to help analysts prioritize unusual billing patterns
+  for further review. Being flagged does not establish fraud,
+  improper billing, or misconduct.
+</p>
 
-      <img
-        src="assets/images/tsa-pareto-chart.png"
-        alt="Pareto chart of TSA complaints by airport"
-        style="display: block; width: 100%; max-width: 650px; height: auto; margin: 16px auto; position: relative; left: -20px;"
-      >
-    </li>
+<h2>Problem</h2>
+<p>
+  Medicare processes an enormous volume of provider billing
+  information, making individual review of every provider
+  impractical. High payments or unusually large service volumes
+  do not necessarily indicate improper billing, particularly
+  when providers treat different patient populations or bill
+  for services measured in different units.
+</p>
+<p>This analysis addresses four research questions:</p>
+<ol>
+  <li>
+    How do service volumes, charges, and payments vary within
+    and between Internal Medicine and Family Practice?
+  </li>
+  <li>
+    Which billing indicators show the greatest variation
+    among specialty peers?
+  </li>
+  <li>
+    Which providers are flagged by the autoencoders, and how
+    closely do they match statistical outliers?
+  </li>
+  <li>
+    How could the findings help analysts prioritize providers
+    for review?
+  </li>
+</ol>
 
-    <li>
-      <strong>
-        <a href="https://github.com/CorHarr/CorHarr.github.io/tree/main/projects/white-house-visitors">
-          White House Visitor Traffic Analysis
-        </a>
-      </strong> (Python, Plotly)
-      <p>
-        Tracked 303,374 White House visitor appointments
-        from January through May 2023 to pinpoint hourly, daily,
-        and monthly scheduling patterns and recommend staffing
-        for peak periods.
-      </p>
+<h2>Data</h2>
+<p>
+  The dataset contains individual provider billing records
+  from the 2024 Medicare Physician &amp; Other Practitioners dataset.
+</p>
+<ul>
+  <li><strong>Records:</strong> 177,266 individual providers</li>
+  <li><strong>Original variables:</strong> 81 columns</li>
+  <li><strong>Internal Medicine:</strong> 93,627 providers</li>
+  <li><strong>Family Practice:</strong> 83,639 providers</li>
+  <li><strong>Selected variables:</strong> 10</li>
+  <li><strong>Duplicate provider records:</strong> None</li>
+  <li>
+    <strong>Missing values:</strong>
+    None in the 10 selected variables
+  </li>
+</ul>
+<p>
+  The analysis examines provider specialty, state, beneficiary
+  counts, service volumes, procedure codes, submitted charges,
+  allowed amounts, Medicare payments, and average patient risk scores.
+</p>
+<p>Three additional billing indicators were calculated:</p>
+<ul>
+  <li>
+    <strong>Services per beneficiary:</strong>
+    Total services divided by beneficiaries
+  </li>
+  <li>
+    <strong>Payments per beneficiary:</strong>
+    Medicare payments divided by beneficiaries
+  </li>
+  <li>
+    <strong>Charge-to-allowed ratio:</strong>
+    Submitted charges divided by Medicare allowed amounts
+  </li>
+</ul>
+<p>
+  These indicators allow providers of different sizes to be
+  compared more meaningfully within their own specialties.
+  Patient risk scores provide additional context about
+  patient complexity.
+</p>
+<p>
+  One Family Practice provider with zero Medicare payments
+  was kept, and extreme records were reviewed but not removed.
+  The most extreme service volumes reflected drug billing
+  units rather than individual patient visits.
+</p>
 
-      <img
-        src="projects/white-house-visitors/outputs_plotly/visits_daily.png"
-        alt="White House daily visitor appointments over time"
-        style="display: block; width: 100%; max-width: 650px; height: auto; margin: 16px auto; position: relative; left: -20px;"
-      >
-    </li>
+<h2>Data Source</h2>
+<p>
+  <strong>Dataset:</strong>
+  Medicare Physician &amp; Other Practitioners – by Provider, 2024
+</p>
+<p>
+  <strong>Publisher:</strong>
+  Centers for Medicare &amp; Medicaid Services (CMS)
+</p>
+<p>
+  <strong>Source:</strong>
+  <a href="https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider">
+    CMS Medicare Physician &amp; Other Practitioners Data
+  </a>
+</p>
+<p>
+  <strong>Data dictionary:</strong>
+  <a href="https://data.cms.gov/resources/medicare-physician-other-practitioners-by-provider-data-dictionary">
+    CMS Provider Data Dictionary
+  </a>
+</p>
+<p>
+  <strong>Filter applied:</strong>
+  Provider Type contains "internal medicine" OR "family practice"
+</p>
+<p>
+  <strong>Retrieved:</strong> November 11, 2026
+</p>
+<p>
+  The publicly available CMS dataset was filtered to providers
+  in Internal Medicine and Family Practice. The filtered dataset
+  is included in the repository as a compressed CSV archive.
+</p>
 
-    <li>
-      <strong>
-        <a href="https://github.com/CorHarr/CorHarr.github.io/tree/main/projects/montgomery-county-crime">
-          Montgomery County Crime Rate Analysis
-        </a>
-      </strong> (R)
-      <p>
-        Combined county, state, and Census data to compare
-        crime per capita, finding that the county has one of
-        Maryland's lowest crime rates when population is
-        considered and that its crime rate fell about 71%
-        between 1980 and 2020.
-      </p>
+<h2>Methodology</h2>
+<ol>
+  <li>
+    <strong>Data inspection:</strong>
+    Examined dataset dimensions, missing values, duplicate
+    providers, and unusual billing records.
+  </li>
+  <li>
+    <strong>Feature engineering:</strong>
+    Calculated services per beneficiary, payments per beneficiary,
+    and charge-to-allowed ratios.
+  </li>
+  <li>
+    <strong>Data transformation:</strong>
+    Applied logarithmic transformations to reduce the
+    influence of extreme values.
+  </li>
+  <li>
+    <strong>Exploratory analysis:</strong>
+    Compared billing distributions, patient risk scores,
+    and correlations between variables.
+  </li>
+  <li>
+    <strong>Statistical baseline (Z-score):</strong>
+    Calculated Z-scores within each specialty and identified
+    providers exceeding three standard deviations on any
+    billing indicator.
+  </li>
+  <li>
+    <strong>Neural network modeling:</strong>
+    Trained a separate TensorFlow autoencoder for each
+    specialty using three billing indicators and patient
+    risk scores.
+  </li>
+  <li>
+    <strong>Model comparison:</strong>
+    Flagged the top 1% of providers by autoencoder
+    reconstruction error and compared those results
+    with statistical outliers.
+  </li>
+  <li>
+    <strong>Interpretation:</strong>
+    Examined which billing indicators contributed most
+    to unusual patterns.
+  </li>
+</ol>
+<p>
+  Each autoencoder used an 80/20 training and validation split,
+  with early stopping to limit overfitting.
+</p>
 
-      <img
-        src="assets/images/moco-violent-property-crime.png"
-        alt="Line chart of violent and property crime in Montgomery County, 1975-2020"
-        style="display: block; width: 100%; max-width: 650px; height: auto; margin: 16px auto; position: relative; left:
+<h2>Key Findings</h2>
+<ul>
+  <li>
+    <strong>Similar payments, different patient populations:</strong>
+    The 42% gap in median total Medicare payments between
+    specialties narrowed to approximately 10% when measured
+    per beneficiary. Median payments were $232 for Internal
+    Medicine and $212 for Family Practice.
+  </li>
+  <li>
+    <strong>Patient complexity differed most:</strong>
+    Median risk scores were 1.76 for Internal Medicine
+    and 1.13 for Family Practice.
+  </li>
+  <li>
+    <strong>Services varied most among peers:</strong>
+    Services per beneficiary showed the greatest typical
+    variation in both specialties. Some extreme service
+    volumes reflected drug billing units rather than
+    individual patient encounters.
+  </li>
+  <li>
+    <strong>The models performed similarly:</strong>
+    Both autoencoders achieved validation errors of 0.1152
+    and 0.1157, with training and validation error closely aligned.
+  </li>
+  <li>
+    <strong>Autoencoders identified 1,774 providers:</strong>
+    The models flagged 937 Internal Medicine and 837 Family
+    Practice providers, representing the highest 1% of
+    reconstruction errors within each specialty.
+  </li>
+  <li>
+    <strong>The methods identified different patterns:</strong>
+    Among autoencoder flags, 379 Internal Medicine and
+    457 Family Practice providers did not exceed the
+    statistical outlier threshold on any individual
+    billing indicator.
+  </li>
+  <li>
+    <strong>Financial indicators contributed most:</strong>
+    Payments per beneficiary and charge-to-allowed ratios
+    together accounted for approximately 79% of reconstruction
+    error among flagged Internal Medicine providers and
+    77% among flagged Family Practice providers.
+  </li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+  Comparing Medicare providers within specialties and measuring
+  billing per beneficiary revealed that typical payment patterns
+  were more similar than total payments initially suggested.
+  Patient complexity showed a clearer distinction between
+  Internal Medicine and Family Practice.
+</p>
+<p>
+  The two detection methods provided complementary findings.
+  Statistical Z-scores identified providers with extreme
+  individual billing indicators, while TensorFlow autoencoders
+  also identified unusual combinations of values that did
+  not exceed those thresholds.
+</p>
+<p>
+  Payments per beneficiary and charge-to-allowed ratios
+  emerged as useful starting points for reviewing unusual
+  billing. The results support using automated methods to
+  narrow the number of records requiring human examination,
+  not to make determinations of fraud or improper billing.
+</p>
+
+<h2>Recommendations</h2>
+<ul>
+  <li>
+    Compare providers within their own specialty and on a
+    per-beneficiary basis rather than by total payments.
+  </li>
+  <li>
+    Begin each review with payments per beneficiary and
+    the charge-to-allowed ratio.
+  </li>
+  <li>
+    Give highest priority to providers flagged by both methods,
+    while also examining those flagged by only one.
+  </li>
+  <li>
+    Use flags to guide review priorities, not to trigger
+    enforcement actions automatically.
+  </li>
+  <li>
+    Pilot the approach on a small set of reviews before
+    applying it more widely.
+  </li>
+</ul>
+
+<h2>Visualizations</h2>
+<p>The notebook includes six visualizations:</p>
+<ol>
+  <li>Billing Indicator Histograms by Specialty</li>
+  <li>Billing Indicator and Risk Score Heatmap</li>
+  <li>Billing Variation and Z-Score Outlier Table</li>
+  <li>Autoencoder Training and Validation Loss</li>
+  <li>Autoencoder and Z-Score Flag Comparison Scatter Plot</li>
+  <li>Model Input Contributions to Autoencoder Flags</li>
+</ol>
+<p>
+  Each visualization includes an assessment explaining
+  its findings.
+</p>
+
+<h3>Featured Visualization</h3>
+<p><strong>Similar Payments, Different Patients</strong></p>
+
+<p align="center">
+  <img
+    src="../../assets/images/medicare-payments-risk-histogram.png"
+    alt="Medicare payments per patient and average patient risk
+    scores for Internal Medicine and Family Practice"
+    width="650"
+  >
+</p>
+
+<p>
+  The upper chart shows substantial overlap in Medicare payments
+  per beneficiary between the two specialties. The lower chart
+  reveals a much larger difference in patient risk scores,
+  with Internal Medicine providers generally serving
+  higher-risk patients.
+</p>
+
+<h2>How to Run</h2>
+<ol>
+  <li>
+    Download the notebook and zipped dataset from this folder.
+  </li>
+  <li>
+    Unzip the dataset into the same directory as the notebook.
+  </li>
+  <li>
+    Open <code>Medicare_Billing.ipynb</code> in Jupyter Notebook
+    or JupyterLab.
+  </li>
+  <li>
+    Install the listed Python libraries if necessary.
+  </li>
+  <li>
+    Run all cells in sequence. Fixed random seeds (42) and
+    deterministic operations reproduce the reported results.
+  </li>
+</ol>
+
+<h2>Repository Structure</h2>
+<ul>
+  <li>
+    <code>Medicare_Billing.ipynb</code> —
+    Analysis, modeling, visualizations, and findings
+  </li>
+  <li>
+    <code>Medicare_PHysician_Other_Practitioner_by_Provider_2024.zip</code>
+    — Filtered 2024 CMS dataset (unzip before running)
+  </li>
+  <li>
+    <code>README.md</code> — Project documentation
+  </li>
+</ul>
+
+<h2>Ethical Considerations</h2>
+<p>
+  Unusual billing patterns do not establish fraud. Flags should
+  be treated as review priorities, not evidence of misconduct,
+  and human review is required before any action. Comparing
+  specialty peers and considering patient complexity helps
+  reduce unfair scrutiny of providers who treat sicker patients.
+  This project does not identify individual flagged providers.
+</p>
+
+<h2>Limitations</h2>
+<p>
+  The data covers a single year and excludes providers with
+  fewer than 11 Medicare beneficiaries. The analysis did not
+  adjust for geographic differences, practice settings, or
+  specific services performed. Service counts can reflect drug
+  billing units rather than patient encounters. Without
+  confirmed fraud labels, fraud-detection accuracy cannot
+  be measured.
+</p>
