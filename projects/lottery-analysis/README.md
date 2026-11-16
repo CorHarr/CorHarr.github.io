@@ -83,7 +83,7 @@ The notebook includes four visualizations:
 3. Distance from Expected Swarm Plot
 4. Hot and Cold Numbers Over Time Icon Array
 
-![Hot and Cold Numbers Polar Wheel](lottery-analysis-polarwheel.png)
+![Hot and Cold Numbers Polar Wheel](assets/image/lottery-analysis-polarwheel.png)
 
 Each visualization includes an assessment explaining its findings.
 
