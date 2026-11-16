@@ -103,7 +103,7 @@ Each visualization includes an assessment explaining its findings.
 
 ## Ethical Considerations
 
-The data comes from an official public source and was used unaltered, so results can be independently verified. Findings about hot and cold numbers could be misused to suggest that certain numbers improve the odds of winning. This analysis is for educational purposes only and does not offer a winning strategy.
+The data comes from an official public source, and the original records were preserved for verification. Findings about hot and cold numbers could be misused to suggest that certain numbers improve the odds of winning. This analysis is for informational purposes only and does not offer a winning strategy.
 
 ## Limitations
 
