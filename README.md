@@ -27,7 +27,7 @@ I approach data science with a commitment to accuracy, critical thinking, and cl
 ### Tools and Technical Skills
 
 - **Programming and Analysis:** Python, R, SQL
-- **Python Libraries:** pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn, TensorFlow
+- **Python Libraries:** pandas, NumPy, Matplotlib, Seaborn, Plotly, SciPy, scikit-learn, TensorFlow
 - **R Visualization:** ggplot2
 - **Business Intelligence:** Power BI, Excel
 - **Development Environment:** Jupyter Notebook, RStudio
@@ -64,7 +64,7 @@ These projects demonstrate a range of analytical methods, programming tools, and
 - **Netflix Top 10 Viewership Analysis** (Python)<br>
   Compared initial popularity with staying power in Netflix Top 10 viewing data from 2021 to 2024, finding that TV drew about 71% of viewing hours and that 8 of the 11 longest-running titles were non-English.
 - **Lottery Number Patterns and Randomness** (Python)<br>
-  Analyzed New York lottery data to examine whether winning numbers in Mega Millions, Powerball, and Pick 10 are drawn evenly, highlighting "hot" and "cold" numbers within each game.
+  Tested whether "hot" and "cold" numbers are real in New York's Mega Millions, Powerball, and Pick 10 drawings, finding that only 10 of 219 numbers stood out, about what chance alone would produce, and that numbers that ran hot or cold early on returned to normal later.
   
 ### Databases & Business Intelligence
 
