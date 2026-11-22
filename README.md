@@ -12,7 +12,7 @@ Data Analyst · Data Science · Visualization
 
 I am a data analyst completing my M.S. in Data Science at Bellevue University, with the goal of supporting evidence-based decision-making in the federal government. My professional background in risk analysis strongly shapes how I work. I approach complex problems by critically questioning data, evaluating evidence, and identifying patterns that drive practical solutions.
 
-Building on this foundation, my graduate studies have deepened my technical toolkit in Python, R, SQL, statistical analysis, data visualization, and predictive modeling. My project work applies public and organizational data to answer real-world questions across public safety, transportation, government operations, education, entertainment, and workforce analytics.
+Building on this foundation, my graduate studies have deepened my technical toolkit in Python, R, SQL, statistical analysis, data visualization, and predictive modeling. My project work applies public and organizational data to answer real-world questions across public safety, transportation, government operations, healthcare, education, sports, entertainment, and workforce analytics.
 
 I approach data science with a commitment to accuracy, critical thinking, and clear communication. I aim to bridge the gap between technical complexity and actionable insights for both technical and nontechnical audiences.
 
@@ -29,17 +29,15 @@ I approach data science with a commitment to accuracy, critical thinking, and cl
 - **Programming and Analysis:** Python, R, SQL
 - **Python Libraries:** pandas, NumPy, Matplotlib, Seaborn, Plotly, SciPy, scikit-learn, TensorFlow
 - **R Visualization:** ggplot2
-- **Business Intelligence:** Power BI, Excel
-- **Development Environment:** Jupyter Notebook, RStudio
+- **Business Intelligence:** Power BI, Power Query, DAX, Excel
+- **Development Environment:** Jupyter Notebook, RStudio, DB Browser for SQLite
 - **Analytical Methods:** Data Cleaning, Exploratory Data Analysis, Statistical Analysis, Data Visualization, Data Storytelling, Predictive Modeling
 
 ---
 
 ## Featured Work
 
-These projects demonstrate a range of analytical methods, programming tools, and practical applications. Completed analyses are being added to GitHub, alongside two planned projects that will expand the portfolio's technical scope.
-
-<p align="center"><em>Portfolio update in progress</em></p>
+These projects demonstrate a range of analytical methods, programming tools, and practical applications. Each one moves from data cleaning and validation through analysis and visualization to findings that can support real decisions.
 
 ### Public Sector & Operations
 
@@ -68,10 +66,10 @@ These projects demonstrate a range of analytical methods, programming tools, and
   
 ### Databases & Business Intelligence
 
-- **120 Years of Olympic History** (SQL) *(Planned)*<br>
-  Querying a relational database of Olympic athletes and results to examine medal leaders by country, the growth of women's participation, and host-country advantage.
-- **Hospital Quality Ratings Dashboard** (Power BI) *(Planned)*<br>
-  Building an interactive dashboard of CMS hospital star ratings to compare quality of care by state and ownership type.
+- **120 Years of Olympic History** (SQL)<br>
+  Traced 120 years of Olympic results in SQL, finding that the USA led all countries with 2,823 medals, women grew from 1.9% to 45.0% of Summer Olympic athletes, and five of six recent hosts won more medals at home than at the previous Games.
+- **Hospital Quality Dashboard** (Power BI)<br>
+  Created an interactive Power BI dashboard that lets users compare CMS star ratings for 5,435 hospitals by state, region, and ownership, finding that for-profit hospitals were the most likely to earn one or two stars.
 
 ---
 
