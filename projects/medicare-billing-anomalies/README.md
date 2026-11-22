@@ -224,10 +224,13 @@
   </li>
   <li>
     <strong>The methods identified different patterns:</strong>
-    Among autoencoder flags, 379 Internal Medicine and
-    457 Family Practice providers did not exceed the
-    statistical outlier threshold on any individual
-    billing indicator.
+    Among autoencoder flags, 558 Internal Medicine (59.6%)
+    and 380 Family Practice (45.4%) providers were also
+    Z-score outliers, while the remaining 379 and 457 did
+    not exceed the statistical outlier threshold on any
+    individual billing indicator. The Z-score method flagged
+    far more providers overall: 3,558 Internal Medicine
+    and 4,305 Family Practice.
   </li>
   <li>
     <strong>Financial indicators contributed most:</strong>
@@ -340,6 +343,11 @@
     deterministic operations reproduce the reported results.
   </li>
 </ol>
+<p>
+  Results were produced with Python 3.13.9, pandas 2.2.3,
+  NumPy 2.1.3, scikit-learn 1.6.1, TensorFlow 2.21.0,
+  Matplotlib 3.10.0, and seaborn 0.13.2.
+</p>
 
 <h2>Repository Structure</h2>
 <ul>
@@ -372,7 +380,9 @@
   fewer than 11 Medicare beneficiaries. The analysis did not
   adjust for geographic differences, practice settings, or
   specific services performed. Service counts can reflect drug
-  billing units rather than patient encounters. Without
-  confirmed fraud labels, fraud-detection accuracy cannot
-  be measured.
+  billing units rather than patient encounters, and CMS
+  suppresses some drug-related fields to protect patient
+  privacy, so drug billing could not be confirmed for every
+  extreme provider. Without confirmed fraud labels,
+  fraud-detection accuracy cannot be measured.
 </p>
