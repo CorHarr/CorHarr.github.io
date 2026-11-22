@@ -35,6 +35,8 @@ The following files contain monthly complaint records from January 2015 through 
 
 The subcategory file exceeds GitHub's browser upload limit and must be downloaded separately from the source repository.
 
+The Data Liberation Project updates these files regularly. This analysis uses data through March 2024, so a current download of `complaints-by-subcategory.csv` will contain more records than the 504,512 rows listed above, and results may differ slightly.
+
 **Airport Reference Data**
 
 Source: [IP2Location IATA/ICAO Airport Codes](https://github.com/ip2location/ip2location-iata-icao)
